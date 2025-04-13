@@ -3,3 +3,4 @@ require("config.lazy")
 vim.opt.timeoutlen = 1000
 vim.opt.ttimeoutlen = 0
 vim.cmd.colorscheme("industry")
+require("config.lazygit").setup()
