@@ -196,6 +196,8 @@ return {
  ░ ░ ░  ░           ░   ░ ░ ░ ░ ░ ▒    ░        ░   ▒     ░░   ░  ▒ ░
  ░   ░  ░ ░               ░     ░ ░                 ░  ░   ░      ░  
         ░                                                            
+
+
 ]],
           -- stylua: ignore
           ---@type snacks.dashboard.Item[]
