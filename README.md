@@ -1,6 +1,6 @@
 Este proyecto es un fork del repositorio principal de [gentleman](https://github.com/gentleman).
 
-![Screenshot NeoVim MOD JCNOTARI](.image/screenshot.png)
+![Screenshot NeoVim MOD JCNOTARI](./image/screenshot.png)
 
 ## Acerca del Proyecto
 
