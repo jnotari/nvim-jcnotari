@@ -57,10 +57,9 @@ Además, puedes usar `lazygit` dentro de Neovim o desde la terminal para gestion
 
 #### Créditos
 
-- Este proyecto es un fork del repositorio de [gentleman](https://github.com/gentleman).
-- Personalizado por [jnotari](https://github.com/jnotari).
+- Este proyecto es un fork del repositorio de [Gentleman-Programming/Gentleman.Dots](https://github.com/Gentleman-Programming/Gentleman.Dots). Personalizado por [jnotari](https://github.com/jnotari).
 
 ##### Licencia
 
 Este proyecto sigue la misma licencia que el repositorio principal.
-Para más detalles, consulta el archivo `LICENSE` en este repositorio o en el repositorio original de [gentleman](https://github.com/gentleman).
+Para más detalles, consulta el archivo `LICENSE` en este repositorio o en el repositorio original de [Gentleman-Programming/Gentleman.Dots](https://github.com/Gentleman-Programming/Gentleman.Dots).
