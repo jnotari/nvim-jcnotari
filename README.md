@@ -1,4 +1,6 @@
-Este proyecto es un fork del repositorio principal de [gentleman](https://github.com/gentleman).
+Este proyecto es un fork del repositorio principal de [Gentleman-Programming/Gentleman.Dots](https://github.com/Gentleman-Programming/Gentleman.Dots).
+
+Proyecto de NeoVim con objetivo de incluir plugins que aumente la productividad.
 
 ![Screenshot NeoVim MOD JCNOTARI](./image/screenshot.png)
 
