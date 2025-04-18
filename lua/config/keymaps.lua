@@ -86,7 +86,3 @@ function SaveFile()
     vim.notify("Error: " .. err, vim.log.levels.ERROR) -- Show the error message if it fails
   end
 end
-
--- keymaps for lazygit
-vim.keymap.set("n", "<leader>gc", "<cmd>LazyGit<cr>", { desc = "LazyGit Open" })
-vim.keymap.set("n", "<leader>gf", "<cmd>LazyGitFilter<cr>", { desc = "Change filter" })
