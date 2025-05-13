@@ -26,12 +26,6 @@ return {
     end,
   },
   {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = { "codelldb" }, -- Instala codelldb automáticamente
-    },
-  },
-  {
     "mfussenegger/nvim-dap",
     ft = "rust",
     config = function()
