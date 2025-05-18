@@ -13,6 +13,9 @@ function M.setup()
       capabilities = {
         positionEncoding = "utf-8",
       },
+      flags = {
+        debounce_text_changes = 0, -- <- Esta línea es crucial
+      },
       settings = {
         ["rust-analyzer"] = {
           checkOnSave = {
