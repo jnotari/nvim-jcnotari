@@ -2,6 +2,10 @@ return {
   "obsidian-nvim/obsidian.nvim",
   version = "*", -- recommended, use latest release instead of latest commit
   lazy = false,
+  enabled = function()
+    -- Disable Obsidian when running from Oil Simple (to avoid path issues in Zed context)
+    return not vim.g.disable_obsidian
+  end,
   dependencies = {
     -- Required.
     "nvim-lua/plenary.nvim",
@@ -14,34 +18,29 @@ return {
       },
     },
     completition = {
-      blink = true,
+      cmp = true,
     },
     picker = {
       -- Set your preferred picker. Can be one of 'telescope.nvim', 'fzf-lua', 'mini.pick' or 'snacks.pick'.
       name = "snacks.pick",
     },
-    mappings = {
-      -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
-      ["gf"] = {
-        action = function()
+    -- Optional, define your own callbacks to further customize behavior.
+    callbacks = {
+      -- Runs anytime you enter the buffer for a note.
+      enter_note = function(client, note)
+        -- Setup keymaps for obsidian notes
+        vim.keymap.set("n", "gf", function()
           return require("obsidian").util.gf_passthrough()
-        end,
-        opts = { noremap = false, expr = true, buffer = true },
-      },
-      -- Toggle check-boxes.
-      ["<leader>ch"] = {
-        action = function()
+        end, { buffer = note.bufnr, expr = true, desc = "Obsidian follow link" })
+
+        vim.keymap.set("n", "<leader>ch", function()
           return require("obsidian").util.toggle_checkbox()
-        end,
-        opts = { buffer = true },
-      },
-      -- Smart action depending on context: follow link, show notes with tag, toggle checkbox, or toggle heading fold
-      ["<cr>"] = {
-        action = function()
+        end, { buffer = note.bufnr, desc = "Toggle checkbox" })
+
+        vim.keymap.set("n", "<cr>", function()
           return require("obsidian").util.smart_action()
-        end,
-        opts = { buffer = true, expr = true },
-      },
+        end, { buffer = note.bufnr, expr = true, desc = "Obsidian smart action" })
+      end,
     },
 
     -- Settings for templates
