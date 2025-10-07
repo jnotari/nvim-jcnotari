@@ -11,10 +11,8 @@ return {
     config = function()
       require("config.rust").setup() -- Carga configuración de Rust
       require("config.rust-dap").setup() -- Carga configuración de DAP
-      local mason_registry = require("mason-registry")
-      local codelldb = mason_registry.get_package("codelldb")
-      local extension_path = codelldb:get_install_path() .. "/extension/"
-      local codelldb_path = extension_path .. "adapter/codelldb"
+      local codelldb_path = vim.fn.exepath("codelldb")
+      local extension_path = vim.fn.fnamemodify(codelldb_path, ":h:h") .. "/"
       local liblldb_path = extension_path .. "lldb/lib/liblldb.so"
       local cfg = require("rustaceanvim.config")
 
