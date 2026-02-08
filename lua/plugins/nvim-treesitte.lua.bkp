@@ -1,0 +1,23 @@
+  -- ============================================
+  --   RESALTADO DE SINTAXIS PARA SQL EMBEBIDO
+  -- ============================================
+  -- Para resaltado avanzado, usa nvim-treesitter
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    config = function()
+      require("nvim-treesitter.configs").setup({
+        ensure_installed = { "python", "sql" }, -- Asegura los parsers
+        highlight = { enable = true },
+        injections = {
+          python = {
+            -- Inyecta la sintaxis SQL dentro de cadenas en spark.sql()
+            "(call function: (attribute object: (identifier) @_obj attr: (identifier) @_method) arguments: (argument_list (string) @sql))"
+            .. "(#eq? @_obj \"spark\")"
+            .. "(#eq? @_method \"sql\")"
+            .. "=> @sql",
+          },
+        },
+      })
+    end
+  }
