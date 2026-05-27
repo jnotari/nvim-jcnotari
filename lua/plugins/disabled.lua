@@ -43,4 +43,8 @@ return {
     "coder/claudecode.nvim",
     enabled = true,
   },
+  {
+    "echasnovski/mini.diff",
+    enabled = false,
+  },
 }
